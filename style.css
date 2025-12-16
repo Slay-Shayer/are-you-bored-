@@ -1,0 +1,97 @@
+:root {
+    --bg-color: #1a1a2e;
+    --text-main: #ffffff; /* Pure white for better visibility */
+    --text-accent: #e94560; /* Pinkish Red */
+    --overlay-bg: #16213e;
+}
+
+body {
+    margin: 0;
+    background-color: var(--bg-color);
+    font-family: 'Courier New', monospace;
+    color: var(--text-main);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Main Menu Styles */
+.main-container {
+    text-align: center;
+    z-index: 1; /* Sits below the overlay */
+}
+
+h1 { 
+    font-size: 3.5rem; 
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 10px rgba(255,255,255,0.3); 
+}
+
+h2 { 
+    font-size: 1.5rem; 
+    color: #a2a8d3; 
+    margin-top: 0; 
+}
+
+/* The Big Button */
+.glow-button {
+    background-color: var(--text-accent);
+    border: none;
+    color: white;
+    padding: 20px 45px;
+    font-size: 1.5rem;
+    font-family: inherit;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 50px;
+    box-shadow: 0 0 20px var(--text-accent);
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin-top: 40px;
+}
+
+.glow-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 40px var(--text-accent);
+}
+
+/* The Overlay (Must match screen size) */
+#contentDisplay {
+    position: fixed;
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+    background-color: var(--bg-color); /* Solid background to hide menu */
+    z-index: 999; /* Sits ON TOP of everything */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* CRITICAL FIX: This hides the overlay */
+.hidden {
+    display: none !important;
+}
+
+/* The Close Button */
+.secondary-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    background: transparent;
+    border: 2px solid var(--text-accent);
+    color: var(--text-accent);
+    padding: 10px 20px;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.secondary-btn:hover {
+    background: var(--text-accent);
+    color: white;
+}
